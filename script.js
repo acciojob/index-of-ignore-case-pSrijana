@@ -1,6 +1,25 @@
-function indexOfIgnoreCase(s1, s2) {
-  if (subStr === "") return 0;
-    return str.toLowerCase().indexOf(subStr.toLowerCase());
+function indexOfIgnoreCase(str, subStr) {
+    if (subStr === "") return 0;
+    
+    str = str.toLowerCase();
+    subStr = subStr.toLowerCase();
+
+    for (let i = 0; i <= str.length - subStr.length; i++) {
+        let found = true;
+
+        for (let j = 0; j < subStr.length; j++) {
+            if (str[i + j] !== subStr[j]) {
+                found = false;
+                break;
+            }
+        }
+
+        if (found) {
+            return i;
+        }
+    }
+
+    return -1;
 }
 
 // Please do not change the code below
